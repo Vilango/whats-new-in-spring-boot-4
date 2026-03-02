@@ -10,11 +10,4 @@ import org.springframework.web.service.registry.ImportHttpServices;
 @ImportHttpServices(group = "product", types = { ProductHttpService.class })
 public class HttpServiceConfig {
 
-	@Bean
-	RestClientHttpServiceGroupConfigurer groupConfigurer() {
-		return groups -> {
-			groups.forEachClient((_, builder) -> builder.baseUrl("http://localhost:8081").build());
-		};
-	}
-
 }
