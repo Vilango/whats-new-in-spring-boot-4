@@ -9,3 +9,4 @@
     8: null_safety
     9: rfc9457_problem_details
     10: performance_virtual_threads
+    11: resilience
