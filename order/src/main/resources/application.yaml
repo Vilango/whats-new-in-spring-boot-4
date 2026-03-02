@@ -5,6 +5,9 @@ spring:
     serviceclient:
       product:  # Matches your @ImportHttpServices(group = "product")
         base-url: http://localhost:8081
+  threads:
+    virtual:
+      enabled: true
 management:
   otlp:
     metrics:
