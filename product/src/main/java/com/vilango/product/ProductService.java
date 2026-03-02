@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.resilience.annotation.ConcurrencyLimit;
+import org.springframework.resilience.annotation.Retryable;
 import org.springframework.stereotype.Service;
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.json.JsonMapper;
@@ -30,6 +32,11 @@ public class ProductService {
 		this.jsonMapper = jsonMapper;
 	}
 
+	@Retryable(maxRetries = 4, includes = ProductApiException.class, delay = 1000, // 1-second
+																					// delay
+			multiplier = 2 // double the delay for each retry attempt
+	)
+	// @ConcurrencyLimit(3)
 	public double calculateTotalPrice(long productId, int quantity) {
 		ProductInfo product = findProductById(productId);
 
