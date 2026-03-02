@@ -1,0 +1,10 @@
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "productId": 1001,
+  "quantity": 1
+}
+
+###
+GET http://localhost:8081/api/products/1?quantity=2

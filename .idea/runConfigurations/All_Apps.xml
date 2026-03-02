@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All Apps" type="CompoundRunConfigurationType">
+    <toRun name="OrderApplication" type="SpringBootApplicationConfigurationType" />
+    <toRun name="ProductApplication" type="SpringBootApplicationConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
