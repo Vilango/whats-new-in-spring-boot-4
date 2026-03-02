@@ -1,4 +1,22 @@
-POST http://localhost:8080/api/orders
+POST http://localhost:8080/api/1/orders
+Content-Type: application/json
+
+{
+  "productId": 1001,
+  "quantity": 1
+}
+
+###
+POST http://localhost:8080/api/1.0/orders
+Content-Type: application/json
+
+{
+  "productId": 1001,
+  "quantity": 1
+}
+
+###
+POST http://localhost:8080/api/2/orders
 Content-Type: application/json
 
 {

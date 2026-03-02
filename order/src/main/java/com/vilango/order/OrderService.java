@@ -25,12 +25,19 @@ public class OrderService {
 		this.productHttpService = productHttpService;
 	}
 
-	public Order placeOrder(PlaceOrder placeOrder) {
+	public Order placeOrderV1(PlaceOrder placeOrder) {
 		log.info("Placing order with productId {} and quantity {}", placeOrder.productId(), placeOrder.quantity());
-		// ProductResponse response =
-		// restClient.get().uri("/api/products/{productId}?quantity={quantity}",
-		// placeOrder.productId(),
-		// placeOrder.quantity()).retrieve().body(ProductResponse.class);
+		ProductResponse response = restClient.get()
+			.uri("/api/products/{productId}?quantity={quantity}", placeOrder.productId(), placeOrder.quantity())
+			.retrieve()
+			.body(ProductResponse.class);
+
+		return new Order(idGenerator.incrementAndGet(), placeOrder.productId(), placeOrder.quantity(),
+				response.totalPrice());
+	}
+
+	public Order placeOrderV2(PlaceOrder placeOrder) {
+		log.info("Placing order V2 with productId {} and quantity {}", placeOrder.productId(), placeOrder.quantity());
 		ProductResponse response = productHttpService.getTotalPrice(placeOrder.productId(), placeOrder.quantity());
 
 		return new Order(idGenerator.incrementAndGet(), placeOrder.productId(), placeOrder.quantity(),
