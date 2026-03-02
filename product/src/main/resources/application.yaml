@@ -3,6 +3,9 @@ spring:
     name: product
 server:
   port: 8081
+  mvc:
+    problem-details:
+      enabled: true
 management:
   otlp:
     metrics:
