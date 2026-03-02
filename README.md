@@ -5,3 +5,4 @@
     4: simplify_httpservice
     5: api_versioning_and_deprecation
     6: introduce_obserability
+    7: seed_products_jackson3
