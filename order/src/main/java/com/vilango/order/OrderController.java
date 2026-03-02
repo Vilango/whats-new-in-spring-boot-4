@@ -15,10 +15,17 @@ public class OrderController {
 
 	private static final Logger log = LoggerFactory.getLogger(OrderController.class);
 
+	private final OrderService orderService;
+
+	public OrderController(OrderService orderService) {
+		this.orderService = orderService;
+	}
+
 	@PostMapping
 	public ResponseEntity<Order> placeOrder(@RequestBody PlaceOrder placeOrder) {
-
-		Order order = new Order(1L, 1L, 1, 1.0);
+		log.info("Placing order {}", placeOrder);
+		Order order = orderService.placeOrder(placeOrder);
+		log.info("Created order {}", order);
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(order);
 	}
