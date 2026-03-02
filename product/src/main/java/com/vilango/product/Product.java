@@ -1,3 +1,4 @@
 package com.vilango.product;
 
-public record Product(double totalPrice){}
+public record Product(double totalPrice) {
+}

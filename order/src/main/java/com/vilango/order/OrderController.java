@@ -12,14 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {
-    private static final Logger log = LoggerFactory.getLogger(OrderController.class);
 
-    @PostMapping
-    public ResponseEntity<Order> placeOrder(@RequestBody PlaceOrder placeOrder) {
+	private static final Logger log = LoggerFactory.getLogger(OrderController.class);
 
-        Order order = new Order(1L,1L,1, 1.0);
+	@PostMapping
+	public ResponseEntity<Order> placeOrder(@RequestBody PlaceOrder placeOrder) {
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(order);
-    }
+		Order order = new Order(1L, 1L, 1, 1.0);
+
+		return ResponseEntity.status(HttpStatus.CREATED).body(order);
+	}
 
 }
