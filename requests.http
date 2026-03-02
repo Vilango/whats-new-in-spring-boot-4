@@ -24,5 +24,8 @@ Content-Type: application/json
   "quantity": 1
 }
 
+### fail
+GET http://localhost:8081/api/products/1?quantity=5
+
 ###
-GET http://localhost:8081/api/products/1?quantity=2
+GET http://localhost:8081/api/products/1001?quantity=4

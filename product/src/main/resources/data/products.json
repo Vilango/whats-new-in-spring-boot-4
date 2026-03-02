@@ -1,0 +1,12 @@
+[
+  { "productId": "1001", "price": 19.99 },
+  { "productId": "1002", "price": 29.50 },
+  { "productId": "1003", "price": 9.95 },
+  { "productId": "1004", "price": 49.00 },
+  { "productId": "1005", "price": 15.75 },
+  { "productId": "1006", "price": 99.99 },
+  { "productId": "1007", "price": 5.49 },
+  { "productId": "1008", "price": 249.0 },
+  { "productId": "1009", "price": 12.30 },
+  { "productId": "1010", "price": 74.90 }
+]
