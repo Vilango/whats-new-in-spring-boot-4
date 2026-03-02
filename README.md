@@ -7,3 +7,4 @@
     6: introduce_obserability
     7: seed_products_jackson3
     8: null_safety
+    9: rfc9457_problem_details
