@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
+
 	private static final Logger log = LoggerFactory.getLogger(ProductController.class);
 
 	private final ProductService productService;
@@ -22,7 +23,7 @@ public class ProductController {
 	}
 
 	@GetMapping("/{productId}")
-	public ResponseEntity<Product> calculatePricing(@PathVariable long productId, @RequestParam int quantity ) {
+	public ResponseEntity<Product> calculatePricing(@PathVariable long productId, @RequestParam int quantity) {
 		log.info("calculating price for product with id {} and quantity {}", productId, quantity);
 
 		double totalPrice = productService.calculateTotalPrice(productId, quantity);
@@ -30,4 +31,5 @@ public class ProductController {
 
 		return new ResponseEntity<>(pricing, HttpStatus.OK);
 	}
+
 }

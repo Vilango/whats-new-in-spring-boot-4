@@ -32,6 +32,10 @@ public class OrderService {
 			.retrieve()
 			.body(ProductResponse.class);
 
+		if (response == null) {
+			throw new RuntimeException("Product not found");
+		}
+
 		return new Order(idGenerator.incrementAndGet(), placeOrder.productId(), placeOrder.quantity(),
 				response.totalPrice());
 	}
